@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Patient, PatientFormValues } from "../types";
+import { EssentialPatient, PatientFormValues, Patient } from "../types";
 
 import { apiBaseUrl } from "../constants";
 
@@ -10,7 +10,9 @@ const ping = async () => {
 };
 
 const getAll = async () => {
-  const { data } = await axios.get<Patient[]>(`${apiBaseUrl}/patients`);
+  const { data } = await axios.get<EssentialPatient[]>(
+    `${apiBaseUrl}/patients`
+  );
 
   return data;
 };
